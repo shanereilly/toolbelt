@@ -2,11 +2,18 @@
 
 A collection of quick command line tools.
 
-Installation:
+## Installation:
+The installation script places symlinks inside `/usr/local/bin`.
 ```
-git clone 
-cd toolbelt
-./install.sh
+git clone https://github.com/shanereilly/toolbelt
+cd ./toolbelt
+sudo ./install.sh
 ```
-- *install.sh* install script
-- *xor* XOR encoder/decoder `xor file1 file2` 
+
+## Uninstall
+```
+sudo ./uninstall.sh
+```
+ - *install.sh* install script
+ - *xor* XOR encoder/decoder `xor file1 file2` 
+
