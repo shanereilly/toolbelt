@@ -14,6 +14,10 @@ sudo ./install.sh
 ```
 sudo ./uninstall.sh
 ```
- - *install.sh* install script
- - *xor* XOR encoder/decoder `xor file1 file2` 
+
+## Tools
+- **bitcmp** compares two files, bit by bit `bitcmp file1 file2 [count]`
+- **install.sh** install script
+- **uninstall.sh** uninstall script
+- **xor** XOR encoder/decoder `xor file1 file2` 
 
