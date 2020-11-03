@@ -2,7 +2,7 @@
 
 A collection of quick command line tools.
 
-## Installation:
+## Install:
 The installation script places symlinks inside `/usr/local/bin`.
 ```
 git clone https://github.com/shanereilly/toolbelt
@@ -10,7 +10,7 @@ cd ./toolbelt
 sudo ./install.sh
 ```
 
-## Uninstall
+## Uninstall:
 ```
 sudo ./uninstall.sh
 ```
