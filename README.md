@@ -16,6 +16,7 @@ sudo ./uninstall.sh
 ```
 
 ## Tools
+- **bcd** convert decimal, hexidecimal or octal number to BCD or convert BCD to decimal `bcd [-b | -d | -x | -o] number`
 - **bitcmp** compares two files, bit by bit `bitcmp file1 file2 [count]`
 - **install.sh** install script
 - **uninstall.sh** uninstall script
