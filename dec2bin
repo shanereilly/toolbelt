@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+
+import argparse
+import sys
+
+parser = argparse.ArgumentParser(description='Convert decimal number to binary.')
+parser.add_argument('infile', nargs='?', help="Input file. If not specified reads standard input.", type=argparse.FileType('r'), default = None if sys.stdin.isatty() else sys.stdin)
+parser.add_argument('-p', '--pad', help="Pads with leading zeroes to the word size", action="store_true")
+parser.add_argument('-w', '--wordsize', help="Word size in bits", type=int, choices = [8,16,32,64])
+args = parser.parse_args()
+
+def main():
+    if args.infile:
+        num = args.infile.read()
+        try:
+            if (args.wordsize):
+                number = ((1 << args.wordsize) - 1) & int(num, 10)
+                if int(num, 10) >> ((1 << (args.wordsize + 1)) - 1):
+                    print("Number exceeds {} bits.".format(args.wordsize))
+                    return
+                if args.pad:
+                    formatString = '#0' + str(args.wordsize + 2) + 'b'
+                else:
+                    formatString = '#b'
+                print(format(number, formatString))
+            else:
+                if num[0] == "-":
+                    print("Negative numbers require wordsize argument for proper conversion.")
+                if args.pad:
+                    print("Padding requires worsize argument.")
+                else:
+                    print(bin(int(num, 10)))
+        except ValueError:
+            print("Not a valid decimal number.")
+    else:
+        print("Specify an input or pipe in stdin.")
+
+
+if __name__ == "__main__":
+    main()
